@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" /> <!- O estilo da pagina vai ser definido pelo arquivo style.css criado ->
+        <title>CrossWord Store</title>
+    </head>
+
+    <body>
+        <div class="grid-container">
+            <header class="header">
+                <div class="brand">
+                    <button onclick="openMenu()">
+                        &#9776;
+                    </button>
+                    <a href="index.html">CrossWord Store</a> <!- Link para a pagina inicial ->
+                </div>
+                <div class="header-links">
+                    <a href="cart.html">Carrinho</a> <!- Link para o carrinho ->
+                    <a href="signin">Cadastre-se</a> <!- Link para fazer login ou criar cadastro ->
+                </div>
+                
+            </header>
+            <aside class="sidebar">
+                <h3>Shopping Categories</h3>
+                <button class="sidebar-close-button" onclick="closeMenu()">x</button>
+                <ul>
+                    <li>
+                        <a href="index.html">Livro 1</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Livro 2</a>
+                    </li>
+                </ul>
+
+            </aside>
+            <main class="main">
+                <div class="content">
+                    <ul class="products">
+                        <li>
+                            <div class="product">
+                                <img class="product-image" src="images/l1.jpg" alt="product">
+                                <div class="product-name">
+                                    <a href="product.html">Livro</a>
+                                </div>
+                                <div class="product-brand">Editora</div>
+                                <div class="product-price">R$15</div>
+                                <div class="product-rating">4.5 Stars (10 Avaliações)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product">
+                                <img class="product-image" src="images/l1.jpg" alt="product">
+                                <div class="product-name">
+                                    <a href="product.html">Livro</a>
+                                </div>
+                                <div class="product-brand">Editora</div>
+                                <div class="product-price">R$15</div>
+                                <div class="product-rating">4.5 Stars (10 Avaliações)</div>
+                            </div>
+                        </li>   
+                        <li>
+                            <div class="product">
+                                <img class="product-image" src="images/l1.jpg" alt="product">
+                                <div class="product-name">
+                                    <a href="product.html">Livro</a>
+                                </div>
+                                <div class="product-brand">Editora</div>
+                                <div class="product-price">R$15</div>
+                                <div class="product-rating">4.5 Stars (10 Avaliações)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product">
+                                <img class="product-image" src="images/l1.jpg" alt="product">
+                                <div class="product-name">
+                                    <a href="product.html">Livro</a>
+                                </div>
+                                <div class="product-brand">Editora</div>
+                                <div class="product-price">R$15</div>
+                                <div class="product-rating">4.5 Stars (10 Avaliações)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product">
+                                <img class="product-image" src="images/l1.jpg" alt="product">
+                                <div class="product-name">
+                                    <a href="product.html">Livro</a>
+                                </div>
+                                <div class="product-brand">Editora</div>
+                                <div class="product-price">R$15</div>
+                                <div class="product-rating">4.5 Stars (10 Avaliações)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product">
+                                <img class="product-image" src="images/l1.jpg" alt="product">
+                                <div class="product-name">
+                                    <a href="product.html">Livro</a>
+                                </div>
+                                <div class="product-brand">Editora</div>
+                                <div class="product-price">R$15</div>
+                                <div class="product-rating">4.5 Stars (10 Avaliações)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product">
+                                <img class="product-image" src="images/l1.jpg" alt="product">
+                                <div class="product-name">
+                                    <a href="product.html">Livro</a>
+                                </div>
+                                <div class="product-brand">Editora</div>
+                                <div class="product-price">R$15</div>
+                                <div class="product-rating">4.5 Stars (10 Avaliações)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product">
+                                <img class="product-image" src="images/l1.jpg" alt="product">
+                                <div class="product-name">
+                                    <a href="product.html">Livro</a>
+                                </div>
+                                <div class="product-brand">Editora</div>
+                                <div class="product-price">R$15</div>
+                                <div class="product-rating">4.5 Stars (10 Avaliações)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product">
+                                <img class="product-image" src="images/l1.jpg" alt="product">
+                                <div class="product-name">
+                                    <a href="product.html">Livro</a>
+                                </div>
+                                <div class="product-brand">Editora</div>
+                                <div class="product-price">R$15</div>
+                                <div class="product-rating">4.5 Stars (10 Avaliações)</div>
+                            </div>
+                        </li>
+                        
+
+                    </ul>
+                </div>
+            </main>
+            <footer class="footer"> 
+               
+               Trabalho de Sistemas Distribuidos
+               
+            </footer>    
+        </div>
+    
+        <script>
+            function openMenu(){
+                document.querySelector(".sidebar").classList.add("open");
+            }
+            function closeMenu(){
+                document.querySelector(".sidebar").classList.remove("open");
+            }
+        </script>
+    </body>
+</html>
