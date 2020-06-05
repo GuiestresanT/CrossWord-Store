@@ -1,0 +1,7 @@
+{
+    "presets":[
+        "@babel/preset-env"
+    ]
+}
+
+/*O babel foi instalado e configurado dessa forma para que conseguissemos rodar pelo terminal (padrao ES6) */
