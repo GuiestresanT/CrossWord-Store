@@ -9,6 +9,8 @@ export default {
         brand: 'Nike',
         rating: 4.5,
         numReviews: 10,
-        description: 'Blablabla'
+        description: 'Blablabla',
+        qtdEstoque: 0,
+
     }]
 }
