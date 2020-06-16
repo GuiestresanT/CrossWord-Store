@@ -10,7 +10,7 @@ export default {
         rating: 4.5,
         numReviews: 10,
         description: 'Blablabla',
-        qtdEstoque: 0,
+        qtdEstoque: 1,
 
     }]
 }
