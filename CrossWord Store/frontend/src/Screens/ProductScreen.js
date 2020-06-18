@@ -22,9 +22,9 @@ function ProductScreen(props) {
 
   return <div>
     <div className="back-to-result">
-      <Link to="/">Back to result</Link>
+    <Link to="/">&#8678;Voltar aos resultados anteriores</Link>
     </div>
-    {loading ? <div>Loading...</div> :
+    {loading ? <div>Carregando...</div> :
       error ? <div>{error} </div> :
         (
           <div className="details">
@@ -37,13 +37,7 @@ function ProductScreen(props) {
                   <h4>{product.name}</h4>
                 </li>
                 <li>
-                  {product.rating} Stars ({product.numReviews} Reviews)
-                </li>
-                <li>
-                  Price: <b>${product.price}</b>
-                </li>
-                <li>
-                  Description:
+                  <b>Descrição:</b>
                   <div>
                     {product.description}
                   </div>
@@ -53,20 +47,20 @@ function ProductScreen(props) {
             <div className="details-action">
               <ul>
                 <li>
-                  Price: {product.price}
+                  <b>Preço</b>: R${product.price}
                 </li>
                 <li>
-                  Status: {product.countInStock > 0 ? "In Stock" : "Unavailable."}
+                  <b>Status:</b> {product.countInStock > 0 ? "Em Estoque" : "Indisponivel"}
                 </li>
                 <li>
-                  Qty: <select value={qty} onChange={(e) => { setQty(e.target.value) }}>
+                  <b>Quantidade:</b> <select value={qty} onChange={(e) => { setQty(e.target.value) }}>
                     {[...Array(product.countInStock).keys()].map(x =>
                       <option key={x + 1} value={x + 1}>{x + 1}</option>
                     )}
                   </select>
                 </li>
                 <li>
-                  {product.countInStock > 0 && <button onClick={handleAddToCart} className="button primary" >Add to Cart</button>
+                  {product.countInStock > 0 && <button onClick={handleAddToCart} className="button primary" >Adicionar ao Carrinho</button>
                   }
                 </li>
               </ul>

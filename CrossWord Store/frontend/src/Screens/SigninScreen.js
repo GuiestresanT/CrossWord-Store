@@ -37,7 +37,7 @@ function SigninScreen(props) {
         </li>
         <li>
           <label htmlFor="email">
-            Email
+            E-mail
           </label>
           <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
           </input>
@@ -48,13 +48,13 @@ function SigninScreen(props) {
           </input>
         </li>
         <li>
-          <button type="submit" className="button primary">Signin</button>
+          <button type="submit" className="button primary">Entrar</button>
         </li>
         <li>
-          New to amazona?
+          Novo no Site?
         </li>
         <li>
-          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Create your amazona account</Link>
+          <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Crie uma conta aqui</Link>
         </li>
       </ul>
     </form>

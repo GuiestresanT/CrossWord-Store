@@ -12,3 +12,5 @@ export default {
         description: 'Blablabla'
     }]
 }
+
+// Usado apenas na fase da construção do site, onde ainda nao se trabalhava com banco de dados.

@@ -31,7 +31,7 @@ function RegisterScreen(props) {
     <form onSubmit={submitHandler} >
       <ul className="form-container">
         <li>
-          <h2>Create Account</h2>
+          <h2>Criar Conta</h2>
         </li>
         <li>
           {loading && <div>Loading...</div>}
@@ -39,34 +39,34 @@ function RegisterScreen(props) {
         </li>
         <li>
           <label htmlFor="name">
-            Name
+            Nome
           </label>
           <input type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
           </input>
         </li>
         <li>
           <label htmlFor="email">
-            Email
+            E-mail
           </label>
           <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
           </input>
         </li>
         <li>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Senha</label>
           <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
           </input>
         </li>
         <li>
-          <label htmlFor="rePassword">Re-Enter Password</label>
+          <label htmlFor="rePassword">Digite sua senha novamente</label>
           <input type="password" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
           </input>
         </li>
         <li>
-          <button type="submit" className="button primary">Register</button>
+          <button type="submit" className="button primary">Registrar</button>
         </li>
         <li>
-          Already have an account?
-          <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Create your amazona account</Link>
+          Já possui uma conta?
+          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Entre aqui</Link>
 
         </li>
 

@@ -36,19 +36,19 @@ function HomeScreen(props) {
       <li>
         <form onSubmit={submitHandler}>
           <input name="searchKeyword" onChange={(e) => setSearchKeyword(e.target.value)} />
-          <button type="submit">Search</button>
+          <button type="submit">Buscar</button>
         </form>
       </li>
       <li>
         Sort By {' '}
         <select name="sortOrder" onChange={sortHandler}>
-          <option value="">Newest</option>
-          <option value="lowest">Lowest</option>
-          <option value="highest">Highest</option>
+          <option value="">Novidades</option>
+          <option value="lowest">Menor Preço</option>
+          <option value="highest">Maior Preço</option>
         </select>
       </li>
     </ul>
-    {loading ? <div>Loading...</div> :
+    {loading ? <div>Carregando...</div> :
       error ? <div>{error}</div> :
         <ul className="products">
           {
@@ -63,8 +63,8 @@ function HomeScreen(props) {
                     <Link to={'/product/' + product._id}>{product.name}</Link>
                   </div>
                   <div className="product-brand">{product.brand}</div>
-                  <div className="product-price">${product.price}</div>
-                  <div className="product-rating">{product.rating} Stars ({product.numReiews} Reviews)</div>
+                  <div className="product-price">R$ {product.price}</div>
+                  
                 </div>
               </li>)
           }

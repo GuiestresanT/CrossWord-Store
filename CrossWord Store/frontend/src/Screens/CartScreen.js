@@ -29,16 +29,16 @@ function CartScreen(props) {
       <ul className="cart-list-container">
         <li>
           <h3>
-            Shopping Cart
+            Carrinho de Compras
           </h3>
           <div>
-            Price
+            Preço
           </div>
         </li>
         {
           cartItems.length === 0 ?
             <div>
-              Cart is empty
+              Carrinho Vazio
           </div>
             :
             cartItems.map(item =>
@@ -60,13 +60,13 @@ function CartScreen(props) {
                         <option key={x + 1} value={x + 1}>{x + 1}</option>
                       )}
                     </select>
-                    <button type="button" className="button" onClick={() => removeFromCartHandler(item.product)} >
-                      Delete
+                    <button type="button" className="button-retirar" onClick={() => removeFromCartHandler(item.product)} >
+                      Retirar do Carrinho
                     </button>
                   </div>
                 </div>
                 <div className="cart-price">
-                  ${item.price}
+                  R${item.price}
                 </div>
               </li>
             )
@@ -76,12 +76,11 @@ function CartScreen(props) {
     </div>
     <div className="cart-action">
       <h3>
-        Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items)
-        :
-         $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+        Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} item):
+         R$ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
       </h3>
       <button onClick={checkoutHandler} className="button primary full-width" disabled={cartItems.length === 0}>
-        Proceed to Checkout
+        Fazer Checkout
       </button>
 
     </div>

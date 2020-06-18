@@ -25,46 +25,46 @@ function OrderScreen(props) {
   const orderDetails = useSelector(state => state.orderDetails);
   const { loading, order, error } = orderDetails;
 
-  return loading ? <div>Loading ...</div> : error ? <div>{error}</div> :
+  return loading ? <div>Carregando...</div> : error ? <div>{error}</div> :
 
     <div>
       <div className="placeorder">
         <div className="placeorder-info">
           <div>
-            <h3>
-              Shipping
-          </h3>
+            <h2>
+              Local de Entrega
+          </h2>
             <div>
               {order.shipping.address}, {order.shipping.city},
           {order.shipping.postalCode}, {order.shipping.country},
           </div>
             <div>
-              {order.isDelivered ? "Delivered at " + order.deliveredAt : "Not Delivered."}
+              {order.isDelivered ? "Entregue em: " + order.deliveredAt : "Não entregue."}
             </div>
           </div>
           <div>
-            <h3>Payment</h3>
+            <h2>Método de Pagamento</h2>
             <div>
               Payment Method: {order.payment.paymentMethod}
             </div>
             <div>
-              {order.isPaid ? "Paid at " + order.paidAt : "Not Paid."}
+              {order.isPaid ? "Pago em " + order.paidAt : "Não pago."}
             </div>
           </div>
           <div>
             <ul className="cart-list-container">
               <li>
-                <h3>
-                  Shopping Cart
-          </h3>
+                <h2>
+                  Carrinho de Compras
+          </h2>
                 <div>
-                  Price
+                  Preço
           </div>
               </li>
               {
                 order.orderItems.length === 0 ?
                   <div>
-                    Cart is empty
+                    Carrinho está vazio.
           </div>
                   :
                   order.orderItems.map(item =>
@@ -80,11 +80,11 @@ function OrderScreen(props) {
 
                         </div>
                         <div>
-                          Qty: {item.qty}
+                          Quantidade: {item.qty}
                         </div>
                       </div>
                       <div className="cart-price">
-                        ${item.price}
+                        R${item.price}
                       </div>
                     </li>
                   )
@@ -97,7 +97,7 @@ function OrderScreen(props) {
         <div className="placeorder-action">
           <ul>
             <li className="placeorder-actions-payment">
-              {loadingPay && <div>Finishing Payment...</div>}
+              {loadingPay && <div>Finalizando Pagamento...</div>}
               {!order.isPaid &&
                 <PaypalButton
                   amount={order.totalPrice}
@@ -105,30 +105,26 @@ function OrderScreen(props) {
               }
             </li>
             <li>
-              <h3>Order Summary</h3>
+              <h2>Descrição do Pedido</h2>
             </li>
             <li>
-              <div>Items</div>
-              <div>${order.itemsPrice}</div>
+              <div>Itens</div>
+              <div>R${order.itemsPrice}</div>
             </li>
             <li>
-              <div>Shipping</div>
-              <div>${order.shippingPrice}</div>
+              <div>Taxa de Entrega</div>
+              <div>R${order.shippingPrice}</div>
             </li>
             <li>
-              <div>Tax</div>
-              <div>${order.taxPrice}</div>
+              <div>Outras Taxas</div>
+              <div>R${order.taxPrice}</div>
             </li>
             <li>
-              <div>Order Total</div>
-              <div>${order.totalPrice}</div>
+              <div>Total do Pedido</div>
+              <div>R${order.totalPrice}</div>
             </li>
           </ul>
-
-
-
         </div>
-
       </div>
     </div>
 
