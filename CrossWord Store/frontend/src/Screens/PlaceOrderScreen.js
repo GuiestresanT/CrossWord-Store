@@ -23,7 +23,7 @@ function PlaceOrderScreen(props) {
   const dispatch = useDispatch();
 
   const placeOrderHandler = () => {
-    // Cria um pedido
+    // create an order
     dispatch(createOrder({
       orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice,
       taxPrice, totalPrice
@@ -41,34 +41,34 @@ function PlaceOrderScreen(props) {
     <div className="placeorder">
       <div className="placeorder-info">
         <div>
-          <h2>
-            Endereço de Entrega
-          </h2>
+          <h3>
+            Shipping
+          </h3>
           <div>
             {cart.shipping.address}, {cart.shipping.city},
           {cart.shipping.postalCode}, {cart.shipping.country},
           </div>
         </div>
         <div>
-          <h2>Metodo de Pagamento</h2>
+          <h3>Payment</h3>
           <div>
-            Metodo Escolhido: {cart.payment.paymentMethod}
+            Payment Method: {cart.payment.paymentMethod}
           </div>
         </div>
         <div>
           <ul className="cart-list-container">
             <li>
-              <h2>
-                Carrinho de Compras
-          </h2>
+              <h3>
+                Shopping Cart
+          </h3>
               <div>
-                Preço
+                Price
           </div>
             </li>
             {
               cartItems.length === 0 ?
                 <div>
-                  O carrinho está vazio.
+                  Cart is empty
           </div>
                 :
                 cartItems.map(item =>
@@ -84,11 +84,11 @@ function PlaceOrderScreen(props) {
 
                       </div>
                       <div>
-                        Quantidade: {item.qty}
+                        Qty: {item.qty}
                       </div>
                     </div>
                     <div className="cart-price">
-                      R${item.price}
+                      ${item.price}
                     </div>
                   </li>
                 )
@@ -101,29 +101,33 @@ function PlaceOrderScreen(props) {
       <div className="placeorder-action">
         <ul>
           <li>
-            <button className="button primary full-width" onClick={placeOrderHandler} >Finalizar Pedido</button>
+            <button className="button primary full-width" onClick={placeOrderHandler} >Place Order</button>
           </li>
           <li>
-            <h2>Descrição do Pedido</h2>
+            <h3>Order Summary</h3>
           </li>
           <li>
-            <div>Itens</div>
-            <div>R${itemsPrice}</div>
+            <div>Items</div>
+            <div>${itemsPrice}</div>
           </li>
           <li>
-            <div>Taxa de Entrega</div>
-            <div>R${shippingPrice}</div>
+            <div>Shipping</div>
+            <div>${shippingPrice}</div>
           </li>
           <li>
-            <div>Outras Taxas</div>
-            <div>R${taxPrice}</div>
+            <div>Tax</div>
+            <div>${taxPrice}</div>
           </li>
           <li>
-            <div>Total do Pedido</div>
-            <div>R${totalPrice}</div>
+            <div>Order Total</div>
+            <div>${totalPrice}</div>
           </li>
         </ul>
+
+
+
       </div>
+
     </div>
   </div>
 

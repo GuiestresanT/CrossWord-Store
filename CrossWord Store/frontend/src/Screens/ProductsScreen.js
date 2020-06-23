@@ -57,66 +57,66 @@ function ProductsScreen(props) {
   return <div className="content content-margined">
 
     <div className="product-header">
-      <h3>Produtos Cadastrados</h3>
-      <button className="button primary" onClick={() => openModal({})}>Criar Produto</button>
+      <h3>Products</h3>
+      <button className="button primary" onClick={() => openModal({})}>Create Product</button>
     </div>
     {modalVisible &&
       <div className="form">
         <form onSubmit={submitHandler} >
           <ul className="form-container">
             <li>
-              <h2>Criar Produto</h2>
+              <h2>Create Product</h2>
             </li>
             <li>
-              {loadingSave && <div>Carregando...</div>}
+              {loadingSave && <div>Loading...</div>}
               {errorSave && <div>{errorSave}</div>}
             </li>
 
             <li>
               <label htmlFor="name">
-                Nome
+                Name
           </label>
               <input type="text" name="name" value={name} id="name" onChange={(e) => setName(e.target.value)}>
               </input>
             </li>
             <li>
               <label htmlFor="price">
-                Preço
+                Price
           </label>
               <input type="text" name="price" value={price} id="price" onChange={(e) => setPrice(e.target.value)}>
               </input>
             </li>
             <li>
               <label htmlFor="image">
-                Imagem
+                Image
           </label>
               <input type="text" name="image" value={image} id="image" onChange={(e) => setImage(e.target.value)}>
               </input>
             </li>
             <li>
               <label htmlFor="brand">
-                Marca
+                Brand
           </label>
               <input type="text" name="brand" value={brand} id="brand" onChange={(e) => setBrand(e.target.value)}>
               </input>
             </li>
             <li>
               <label htmlFor="countInStock">
-                Quantidade em Estoque
+                CountInStock
           </label>
               <input type="text" name="countInStock" value={countInStock} id="countInStock" onChange={(e) => setCountInStock(e.target.value)}>
               </input>
             </li>
             <li>
               <label htmlFor="name">
-                Categoria
+                Category
           </label>
               <input type="text" name="category" value={category} id="category" onChange={(e) => setCategory(e.target.value)}>
               </input>
             </li>
             <li>
               <label htmlFor="description">
-                Descrição
+                Description
           </label>
               <textarea name="description" value={description} id="description" onChange={(e) => setDescription(e.target.value)}></textarea>
             </li>
@@ -124,7 +124,7 @@ function ProductsScreen(props) {
               <button type="submit" className="button primary">{id ? "Update" : "Create"}</button>
             </li>
             <li>
-              <button type="button" onClick={() => setModalVisible(false)} className="button secondary">Voltar</button>
+              <button type="button" onClick={() => setModalVisible(false)} className="button secondary">Back</button>
             </li>
           </ul>
         </form>
@@ -138,11 +138,11 @@ function ProductsScreen(props) {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Categoria</th>
-            <th>Marca</th>
-            <th>Ação</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Brand</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -153,9 +153,9 @@ function ProductsScreen(props) {
             <td>{product.category}</td>
             <td>{product.brand}</td>
             <td>
-              <button className="button" onClick={() => openModal(product)} >Editar</button>
+              <button className="button" onClick={() => openModal(product)} >Edit</button>
               {' '}
-              <button className="button" onClick={() => deleteHandler(product)} >Deletar</button>
+              <button className="button" onClick={() => deleteHandler(product)} >Delete</button>
             </td>
           </tr>))}
         </tbody>

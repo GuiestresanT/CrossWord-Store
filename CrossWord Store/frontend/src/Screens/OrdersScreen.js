@@ -34,14 +34,14 @@ function OrdersScreen(props) {
           <thead>
             <tr>
               <th>ID</th>
-              <th>DATA</th>
+              <th>DATE</th>
               <th>TOTAL</th>
-              <th>USUARIO</th>
-              <th>PAGO</th>
-              <th>PAGO EM</th>
-              <th>ENTREGUE</th>
-              <th>ENTREGUE EM</th>
-              <th>AÇÕES</th>
+              <th>USER</th>
+              <th>PAID</th>
+              <th>PAID AT</th>
+              <th>DELIVERED</th>
+              <th>DELIVERED AT</th>
+              <th>ACTIONS</th>
             </tr>
           </thead>
           <tbody>
@@ -55,9 +55,9 @@ function OrdersScreen(props) {
               <td>{order.isDelivered.toString()}</td>
               <td>{order.deliveredAt}</td>
               <td>
-                <Link to={"/order/" + order._id} className="button secondary" >Detalhes</Link>
+                <Link to={"/order/" + order._id} className="button secondary" >Details</Link>
                 {' '}
-                <button type="button" onClick={() => deleteHandler(order)} className="button secondary">Apagar</button>
+                <button type="button" onClick={() => deleteHandler(order)} className="button secondary">Delete</button>
               </td>
             </tr>))}
           </tbody>

@@ -1,4 +1,3 @@
-/* Parte principal - Cabeçalho, Body e Rodapé */
 html{
   font-size: 62.5%; /* 16px * 62.5 = 10px = 1rem */
   box-sizing: border-box;
@@ -11,13 +10,6 @@ body{
 button{
   font-size: 1.6rem;
 }
-
-.button-retirar{
-  font-size: 1.3rem;
-  margin-left: 1rem;
-  
-}
-
 .full-width {
   width: 100%;
 }
@@ -36,8 +28,8 @@ button{
 }
 .header{
   grid-area: header;
-  background-color: #f0c040;
-  color: black;
+  background-color: #203040;
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,8 +55,8 @@ button{
 }
 .footer{
   grid-area: footer;
-  background-color:#f0c040;
-  color: black;
+  background-color: #203040;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,8 +67,7 @@ a{
 a:hover{
   color:#ff8000
 }
-
-/* HomeScreen - Parte dos produtos */
+/* Home Screen */
 .products {
   display: flex;
   justify-content: center;
@@ -86,10 +77,10 @@ a:hover{
 .products li {
   list-style-type: none;
   padding: 0;
-  flex: 0 1 20rem;
+  flex: 0 1 34rem;
   margin: 1rem;
-  height: 37rem;
-  border-bottom: thick double black;
+  height: 50rem;
+  border-bottom: .1rem #c0c0c0 solid;
 }
 .product{
   display: flex;
@@ -103,22 +94,22 @@ a:hover{
 }
 .product-brand{
   font-size: 1.2rem;
-  color: #ff8000;
+  color:#808080;
 }
 .product-price{
   font-size: 2rem;
   font-weight: bold;
 }
 .product-image{
-  max-width: 30rem;
-  max-height: 30rem;
+  max-width: 34rem;
+  max-height: 34rem;
 }
 .product-rating{
   margin-bottom: 1rem;
 }
-/* Barra Lateral */
+/* Sidebar */
 
-.brand button { 
+.brand button {
   font-size: 3rem;
   padding: .5rem;
   background: none;
@@ -152,27 +143,26 @@ a:hover{
   top: 1.5rem
 }
 
-/* Detalhe da pagina de cada produto individualmente*/
+/* Product Details */
 .details{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 0rem;
+  padding: 1rem;
 }
 .details-image {
-  flex: 2 1 12rem;
+  flex: 2 1 60rem;
 }
 .details-image img{
-  max-width: 36rem;
-  padding: 1.5rem;
+  max-width: 60rem;
   width: 100%;
 }
 .details-info {
-  flex: 1 1 28rem;
+  flex: 1 1 30rem;
 }
 .details-action {
-  flex: 1 1 35rem;
+  flex: 1 1 30rem;
 }
 
 .details-info ul, .details-action ul{
@@ -180,17 +170,16 @@ a:hover{
   padding: 0;
 }
 .details-info li, .details-action li{
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .back-to-result {
-  padding: .6rem;
+  padding: 1rem;
 }
 .details-action{
-  border: .1rem black solid;
+  border: .1rem #808080 solid;
   border-radius: 0.5rem;
   background-color: #f8f8f8;
-  padding: .8rem;
-  margin-right: 2rem;
+  padding: 1rem;
 }
 .details-action ul li:last-child{
   display: flex;
@@ -215,7 +204,7 @@ a:hover{
 .text-center{
   text-align: center;
 }
-/* Carrinho */
+/* Cart */
 
 .cart{
   display: flex;
@@ -267,7 +256,7 @@ align-items: flex-end;
   text-align: right;
 }
 
-/* Formulario */
+/* forms */
 
 .form{
   display: flex;
@@ -278,12 +267,11 @@ align-items: flex-end;
 .form-container{
   display: flex;
   flex-direction: column;
-  width: 30rem;
+  width:32rem;
   padding: 2rem;
   border: .1rem #c0c0c0 solid;
   border-radius: .5rem;
   list-style-type: none;
-  margin-top: 5rem;
 }
 .form-container li{
   display: flex;
@@ -298,7 +286,7 @@ input{
 }
 
 
-/* Produtos */
+/* Products */
 
 .product-header{
   display: flex;
@@ -321,7 +309,7 @@ tbody>tr:nth-child(odd){
   background-color: #f0f0f0;
 }
 
-/* Passos de Checkout */
+/* Checkout Steps */
 
 .checkout-steps{
   display: flex;
@@ -341,7 +329,7 @@ tbody>tr:nth-child(odd){
   color: #f08000;
 }
 
-/* Pagina para finalizar pedido */
+/* Place Order */
 
 .placeorder{
   display: flex;
@@ -358,7 +346,6 @@ tbody>tr:nth-child(odd){
   border-radius: .5rem;
   background-color: #fcfcfc;
   padding: 1rem;
-  margin-right: 1rem;
 }
 .placeorder-info > div{
   border: .1rem #c0c0c0 solid;
@@ -388,7 +375,7 @@ tbody>tr:nth-child(odd){
   width: 100%;
 }
 
-/* Pagina do Perfil */
+/* Profile */
 
 .profile{
   display: flex;
@@ -402,8 +389,7 @@ tbody>tr:nth-child(odd){
   flex: 3 1 60rem;
 }
 
-/* Administrador */
-
+/* admin */
 .dropdown{
   display: inline-block;
   position: relative;
@@ -423,24 +409,23 @@ tbody>tr:nth-child(odd){
   display: block;
 }
 
-/* Parte de pesquisa da pagina principal - Caixa de pesquisa e botoes */
+/* filter */
 
 .filter{
   display: flex;
   list-style-type: none;
   padding: 0;
-  margin: 2rem auto;
-  max-width: 50rem;
+  margin: 1rem auto;
+  max-width: 45rem;
   justify-content: space-between;
   align-items: center;
 }
-
 .filter input,
 .filter button,
 .filter select{
   padding: 1rem;
   border-radius: 0.5rem;
-  border:.1rem black solid;
+  border:.1rem #c0c0c0 solid;
   font-size: 1.6rem;
 
 }

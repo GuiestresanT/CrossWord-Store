@@ -22,9 +22,9 @@ function ProductScreen(props) {
 
   return <div>
     <div className="back-to-result">
-    <Link to="/">&#8678;Voltar aos resultados anteriores</Link>
+      <Link to="/">Back to result</Link>
     </div>
-    {loading ? <div>Carregando...</div> :
+    {loading ? <div>Loading...</div> :
       error ? <div>{error} </div> :
         (
           <div className="details">
@@ -37,7 +37,13 @@ function ProductScreen(props) {
                   <h4>{product.name}</h4>
                 </li>
                 <li>
-                  <b>Descrição:</b>
+                  {product.rating} Stars ({product.numReviews} Reviews)
+                </li>
+                <li>
+                  Price: <b>${product.price}</b>
+                </li>
+                <li>
+                  Description:
                   <div>
                     {product.description}
                   </div>
@@ -47,20 +53,20 @@ function ProductScreen(props) {
             <div className="details-action">
               <ul>
                 <li>
-                  <b>Preço</b>: R${product.price}
+                  Price: {product.price}
                 </li>
                 <li>
-                  <b>Status:</b> {product.countInStock > 0 ? "Em Estoque" : "Indisponivel"}
+                  Status: {product.countInStock > 0 ? "In Stock" : "Unavailable."}
                 </li>
                 <li>
-                  <b>Quantidade:</b> <select value={qty} onChange={(e) => { setQty(e.target.value) }}>
+                  Qty: <select value={qty} onChange={(e) => { setQty(e.target.value) }}>
                     {[...Array(product.countInStock).keys()].map(x =>
                       <option key={x + 1} value={x + 1}>{x + 1}</option>
                     )}
                   </select>
                 </li>
                 <li>
-                  {product.countInStock > 0 && <button onClick={handleAddToCart} className="button primary" >Adicionar ao Carrinho</button>
+                  {product.countInStock > 0 && <button onClick={handleAddToCart} className="button primary" >Add to Cart</button>
                   }
                 </li>
               </ul>

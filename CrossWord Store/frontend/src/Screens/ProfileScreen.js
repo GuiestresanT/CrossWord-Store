@@ -44,7 +44,7 @@ function ProfileScreen(props) {
         <form onSubmit={submitHandler} >
           <ul className="form-container">
             <li>
-              <h2>Perfil do Usuario</h2>
+              <h2>User Profile</h2>
             </li>
             <li>
               {loading && <div>Loading...</div>}
@@ -53,14 +53,14 @@ function ProfileScreen(props) {
             </li>
             <li>
               <label htmlFor="name">
-                Nome
+                Name
           </label>
               <input value={name} type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
               </input>
             </li>
             <li>
               <label htmlFor="email">
-                E-mail
+                Email
           </label>
               <input value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
               </input>
@@ -72,10 +72,10 @@ function ProfileScreen(props) {
             </li>
 
             <li>
-              <button type="submit" className="button primary">Atualizar</button>
+              <button type="submit" className="button primary">Update</button>
             </li>
             <li>
-              <button type="button" onClick={handleLogout} className="button secondary full-width">Sair</button>
+              <button type="button" onClick={handleLogout} className="button secondary full-width">Logout</button>
             </li>
 
           </ul>
@@ -84,16 +84,16 @@ function ProfileScreen(props) {
     </div>
     <div className="profile-orders content-margined">
       {
-        loadingOrders ? <div>Carregando...</div> :
+        loadingOrders ? <div>Loading...</div> :
           errorOrders ? <div>{errorOrders} </div> :
             <table className="table">
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>DATA</th>
+                  <th>DATE</th>
                   <th>TOTAL</th>
-                  <th>PAGO</th>
-                  <th>AÇÕES</th>
+                  <th>PAID</th>
+                  <th>ACTIONS</th>
                 </tr>
               </thead>
               <tbody>
@@ -103,7 +103,7 @@ function ProfileScreen(props) {
                   <td>{order.totalPrice}</td>
                   <td>{order.isPaid}</td>
                   <td>
-                    <Link to={"/order/" + order._id}>DETALHES</Link>
+                    <Link to={"/order/" + order._id}>DETAILS</Link>
                   </td>
                 </tr>)}
               </tbody>

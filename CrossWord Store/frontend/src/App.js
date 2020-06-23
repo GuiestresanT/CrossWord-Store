@@ -32,23 +32,23 @@ function App() {
         <header className="header">
           <div className="brand">
             <button onClick={openMenu}>
-              &#9776;              
+              &#9776;
         </button>
-            <Link to="/" >CrossWord Store</Link>
+            <Link to="/" >amazona</Link>
           </div>
           <div className="header-links">
-            <a href="cart.html">Carrinho</a>
+            <a href="cart.html">Cart</a>
             {
               userInfo ? <Link to="/profile">{userInfo.name}</Link> :
-                <Link to="/signin">Entre Aqui</Link>
+                <Link to="/signin">Sign In</Link>
             }
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <a href="#"  >Admin</a>
                 <ul className="dropdown-content">
                   <li>
-                    <Link to="/orders">Pedidos</Link>
-                    <Link to="/products">Produtos</Link>
+                    <Link to="/orders">Orders</Link>
+                    <Link to="/products">Products</Link>
                   </li>
                 </ul>
               </div>
@@ -56,15 +56,16 @@ function App() {
           </div>
         </header>
         <aside className="sidebar">
-          <h3>Categorias</h3> 
+          <h3>Shopping Categories</h3>
           <button className="sidebar-close-button" onClick={closeMenu}>x</button>
           <ul className="categories">
-           
-          /* Implementar aqui os itens do sidebar */
-           
             <li>
               <Link to="/category/Pants">Pants</Link>
-            </li>          
+            </li>
+
+            <li>
+              <Link to="/category/Shirts">Shirts</Link>
+            </li>
 
           </ul>
         </aside>
@@ -84,11 +85,12 @@ function App() {
             <Route path="/category/:id" component={HomeScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
 
+
           </div>
 
         </main>
         <footer className="footer">
-          Trabalho de Sistemas Distribuidos.
+          All right reserved.
     </footer>
       </div>
     </BrowserRouter>
