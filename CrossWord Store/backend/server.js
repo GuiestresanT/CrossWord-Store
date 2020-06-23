@@ -14,6 +14,9 @@ mongoose.connect(mongodbUrl, {
   useCreateIndex: true,
 }).catch((error) => console.log(error.reason));
 
+mongoose.connection.on('connected', () => {
+  console.log('CONECTOU COM O BD');
+});
 
 const app = express();
 app.use(bodyParser.json());
@@ -24,6 +27,10 @@ app.use('/api/orders', orderRoute);
 app.get('/api/config/paypal', (req, res) => {
   res.send(config.PAYPAL_CLIENT_ID);
 });
+
+if (process.env.NODE_ENV === 'production'){
+    app.use(express.static('/frontend/build'));
+}
 
 app.use(express.static(path.join(__dirname, '/../frontend/build')));
 app.get('*', (req, res) => {
