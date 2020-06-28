@@ -60,10 +60,10 @@ function App() {
           <button className="sidebar-close-button" onClick={closeMenu}>x</button>
           <ul className="categories">
            
-          /* Implementar aqui os itens do sidebar */
+          
            
             <li>
-              <Link to="/category/Pants">Pants</Link>
+              <Link to="/category/Revista">Revista</Link>
             </li>          
 
           </ul>
