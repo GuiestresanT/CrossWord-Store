@@ -45,7 +45,7 @@ function OrderScreen(props) {
           <div>
             <h3>Payment</h3>
             <div>
-              Metodo de Pagamento: {order.payment.paymentMethod}
+              Payment Method: {order.payment.paymentMethod}
             </div>
             <div>
               {order.isPaid ? "Paid at " + order.paidAt : "Not Paid."}
